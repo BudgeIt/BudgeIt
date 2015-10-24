@@ -24,7 +24,9 @@
                 </label>
             </div>
 
-            <button type="submit" class="btn btn-default" id="submit">Log In</button>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary" id="submit">Log In</button>
+            </div>
         </form>
     </div>
 @endsection
