@@ -52,6 +52,12 @@ return [
             'prefix'   => '',
         ],
 
+        'behat' => [
+            'driver'   => 'sqlite',
+            'database' => storage_path('behat.sqlite'),
+            'prefix'   => '',
+        ],
+
         'mysql' => [
             'driver'    => 'mysql',
             'host'      => env('DB_HOST', 'localhost'),
