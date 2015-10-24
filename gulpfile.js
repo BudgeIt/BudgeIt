@@ -17,4 +17,5 @@ elixir(function (mix) {
             '../../../node_modules/bootstrap-sass/assets/javascripts/bootstrap.js',
             'app.js'
         ])
+        .version(['css/app.css', 'js/all.js']);
 });
