@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('layouts.base')
 @section('title', 'Register')
 @section('content')
     <div class="col-md-6 col-md-offset-3">

@@ -1,2 +1,2 @@
-@extends('layout')
+@extends('layouts.base')
 @section('title', 'Welcome')
