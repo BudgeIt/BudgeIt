@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <title>@yield('title') - BudgeIt</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    <link rel="stylesheet" href="{{ elixir('css/app.css') }}">
+    <script src="{{ elixir('js/all.js') }}"></script>
 </head>
 <body>
 <header>
