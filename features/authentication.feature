@@ -12,6 +12,7 @@ Feature: Authentication
     And I am on the homepage
     When I follow "Log In"
     Then the url should match "/auth/login"
+    And I should see a "form#log-in" element
   Scenario: Guests see a "Register" link
     Given I am a guest
     When I am on the homepage
@@ -21,3 +22,4 @@ Feature: Authentication
     And I am on the homepage
     When I follow "Register"
     Then the url should match "/auth/register"
+    And I should see a "form#register" element
