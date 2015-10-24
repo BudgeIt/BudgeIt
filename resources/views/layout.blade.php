@@ -35,5 +35,9 @@
     </nav>
 </header>
 
+<div class="container">
+    @section('main-container')
+    @endsection
+</div>
 </body>
 </html>
