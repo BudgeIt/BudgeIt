@@ -31,11 +31,12 @@ Feature: Authentication
     Given I am a guest
     And A user "john.doe@example.com" does not exist
     And I am on "/auth/register"
-    When I fill in "name" with "John Doe"
-    And I fill in "email" with "john.doe@example.com"
-    And I fill in "password" with "Password1"
-    And I fill in "password_confirmation" with "Password1"
-    And I press "submit"
+    When I fill in the following:
+      | name                  | John Doe             |
+      | email                 | john.doe@example.com |
+      | password              | Password1            |
+      | password_confirmation | Password1            |
+    And I press "Register"
     Then I should be on the homepage
     And A user "john.doe@example.com" should exist
     And I should be logged in as "john.doe@example.com"
