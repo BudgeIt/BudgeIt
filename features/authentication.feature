@@ -15,6 +15,11 @@ Feature: Authentication
     Then the url should match "/auth/login"
     And I should see a "form#log-in" element
 
+  Scenario: Users are redirected away from login page
+    Given I am logged in as "john.doe@example.com"
+    When I am on "/auth/login"
+    Then I should be on the homepage
+
   Scenario: Log in form logs an existing user in, redirects to home
     Given I am a guest
     And The following users exist:
@@ -39,6 +44,11 @@ Feature: Authentication
     When I follow "Register"
     Then the url should match "/auth/register"
     And I should see a "form#register" element
+
+  Scenario: Users are redirected away from register page
+    Given I am logged in as "john.doe@example.com"
+    When I am on "/auth/register"
+    Then I should be on the homepage
 
   Scenario: Register form creates user, logs me in, redirects to home
     Given I am a guest
