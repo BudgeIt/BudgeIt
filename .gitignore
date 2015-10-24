@@ -4,7 +4,8 @@ Homestead.yaml
 Homestead.json
 .env
 
-/public/css/**/*.map
+/public/css/*
+/public/js/*
 
 .phpstorm.meta.php
 _ide_helper.php
