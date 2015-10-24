@@ -5,3 +5,6 @@ Homestead.json
 .env
 
 /public/css/**/*.map
+
+.phpstorm.meta.php
+_ide_helper.php
