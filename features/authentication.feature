@@ -23,3 +23,15 @@ Feature: Authentication
     When I follow "Register"
     Then the url should match "/auth/register"
     And I should see a "form#register" element
+  Scenario: Register form creates user, logs me in, redirects to home
+    Given I am a guest
+    And A user "john.doe@example.com" does not exist
+    And I am on "/auth/register"
+    When I fill in "name" with "John Doe"
+    And I fill in "email" with "john.doe@example.com"
+    And I fill in "password" with "Password1"
+    And I fill in "password_confirmation" with "Password1"
+    And I press "submit"
+    Then I should be on the homepage
+    And A user "john.doe@example.com" should exist
+    And I should be logged in as "john.doe@example.com"
