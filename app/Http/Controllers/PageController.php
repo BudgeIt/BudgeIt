@@ -7,7 +7,7 @@ class PageController extends Controller
 
     public function getHomePage()
     {
-        return view('home');
+        return view('pages.home');
     }
 
 }
