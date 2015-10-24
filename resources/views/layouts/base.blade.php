@@ -11,7 +11,7 @@
 <body>
 <header>
     <nav class="navbar navbar-default navbar-static-top">
-        <div class="container-fluid">
+        <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
                         data-target="#navigation-links" aria-expanded="false">
@@ -27,7 +27,15 @@
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     @if(Auth::check())
-                        <li><a class="log-out" href="/auth/logout">Log Out</a></li>
+                        <li role="presentation" class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button"
+                               aria-haspopup="true" aria-expanded="false">
+                                {{ Auth::user()->name }} <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="log-out" href="/auth/logout">Log Out</a></li>
+                            </ul>
+                        </li>
                     @else
                         <li><a class="register" href="/auth/register">Register</a></li>
                         <li><a class="log-in" href="/auth/login">Log In</a></li>
