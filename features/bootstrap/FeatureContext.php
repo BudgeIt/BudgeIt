@@ -52,6 +52,18 @@ class FeatureContext extends MinkContext implements Context, SnippetAcceptingCon
     }
 
     /**
+     * @Given I am logged in as :email
+     */
+    public function iAmLoggedInAs($email)
+    {
+        $existing = User::where('email', $email)->first();
+        if (!$existing) {
+            $existing = User::create(['name' => $email, 'email' => $email, 'password' => $email]);
+        }
+        Auth::login($existing);
+    }
+
+    /**
      * @Then A user :email should exist
      */
     public function aUserShouldExist($email)
