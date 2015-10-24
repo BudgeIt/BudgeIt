@@ -11,4 +11,4 @@ Feature: Authentication
   Scenario: Guests see a "Register" link
     Given I am a guest
     When I am on the homepage
-    Then I should see "Register" in the "a.regsiter" element
+    Then I should see "Register" in the "a.register" element
