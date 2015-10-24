@@ -53,3 +53,8 @@ Feature: Authentication
     Then I should be on the homepage
     And A user "john.doe@example.com" should exist
     And I should be logged in as "john.doe@example.com"
+
+  Scenario: Users see a log out button
+    Given I am logged in as "john.doe@example.com"
+    When I am on the homepage
+    Then I should see "Log Out" in the "a.log-out" element
