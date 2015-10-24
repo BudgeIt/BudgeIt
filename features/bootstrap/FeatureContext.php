@@ -3,6 +3,7 @@
 use App\User;
 use Behat\Behat\Context\Context;
 use Behat\Behat\Context\SnippetAcceptingContext;
+use Behat\Gherkin\Node\TableNode;
 use Behat\MinkExtension\Context\MinkContext;
 use Laracasts\Behat\Context\Migrator;
 
@@ -50,6 +51,24 @@ class FeatureContext extends MinkContext implements Context, SnippetAcceptingCon
         $logged_in = Auth::user();
         PHPUnit_Framework_Assert::assertNotEmpty($logged_in);
         PHPUnit_Framework_Assert::assertEquals($email, $logged_in->email);
+    }
+
+    /**
+     * @Given /^The following users exist:$/
+     */
+    public function theFollowingUsersExist(TableNode $table)
+    {
+        foreach ($table as $user) {
+            if (empty($user['email'])) {
+                throw new InvalidArgumentException('You must specify the user\'s email address!');
+            }
+            $existing = User::where('email', $user['email'])->first();
+            if ($existing) {
+                $existing->save($user);
+            } else {
+                User::create($user);
+            }
+        }
     }
 
 }

@@ -15,6 +15,19 @@ Feature: Authentication
     Then the url should match "/auth/login"
     And I should see a "form#log-in" element
 
+  Scenario: Log in form logs an existing user in, redirects to home
+    Given I am a guest
+    And The following users exist:
+      | name     | email                | password  |
+      | John Doe | john.doe@example.com | Password1 |
+    And I am on "/auth/login"
+    When I fill in the following:
+      | email    | john.doe@example.com |
+      | password | Password1            |
+    And I press "Log In"
+    Then I should be on the homepage
+    And I should be logged in as "john.doe@example.com"
+
   Scenario: Guests see a "Register" link
     Given I am a guest
     When I am on the homepage
