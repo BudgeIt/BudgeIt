@@ -25,6 +25,7 @@
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     @if(Auth::check())
+                        <li><a class="log-out" href="/auth/logout">Log Out</a></li>
                     @else
                         <li><a class="register" href="/auth/register">Register</a></li>
                         <li><a class="log-in" href="/auth/login">Log In</a></li>
