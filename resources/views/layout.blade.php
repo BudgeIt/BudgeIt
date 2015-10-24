@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>BudgeIt</title>
+    <title>@yield('title') - BudgeIt</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 </head>
@@ -36,8 +36,7 @@
 </header>
 
 <div class="container">
-    @section('main-container')
-    @endsection
+    @yield('content')
 </div>
 </body>
 </html>

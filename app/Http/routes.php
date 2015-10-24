@@ -14,3 +14,9 @@
 Route::get('/', function () {
     return view('home');
 });
+
+// Authentication routes...
+Route::get('auth/login', 'Auth\AuthController@getLogin');
+
+// Registration routes...
+Route::get('auth/register', 'Auth\AuthController@getRegister');
