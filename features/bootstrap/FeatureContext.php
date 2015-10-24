@@ -83,4 +83,12 @@ class FeatureContext extends MinkContext implements Context, SnippetAcceptingCon
         PHPUnit_Framework_Assert::assertEquals($email, $logged_in->email);
     }
 
+    /**
+     * @Then I should be logged out
+     */
+    public function iShouldBeLoggedOut()
+    {
+        PHPUnit_Framework_Assert::assertFalse(Auth::check());
+    }
+
 }

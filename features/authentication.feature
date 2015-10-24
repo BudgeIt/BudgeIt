@@ -58,3 +58,10 @@ Feature: Authentication
     Given I am logged in as "john.doe@example.com"
     When I am on the homepage
     Then I should see "Log Out" in the "a.log-out" element
+
+  Scenario: Log out button goes to /auth/logout, logs the user out, and redirects to home
+    Given I am logged in as "john.doe@example.com"
+    When I am on the homepage
+    And I follow "Log Out"
+    Then I should be on the homepage
+    And I should be logged out
