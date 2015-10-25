@@ -1,11 +1,11 @@
 {
-    "name": "laravel/laravel",
-    "description": "The Laravel Framework.",
-    "keywords": ["framework", "laravel"],
+    "name": "budgeit/budgeit",
+    "description": "An open source web application for household budgeting and finances.",
+    "keywords": ["budgeting", "app", "finances", "laravel"],
     "license": "MIT",
     "type": "project",
     "require": {
-        "php": ">=5.5.9",
+        "php": "^5.6",
         "laravel/framework": "5.1.*",
         "barryvdh/laravel-ide-helper": "^2.1",
         "budgeit/composer-builder": "dev-master"
